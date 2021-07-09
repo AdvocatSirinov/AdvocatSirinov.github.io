@@ -449,6 +449,10 @@
   transition-duration: 0.3s;
 }
 
+.section-padding.team-section{
+  padding-top: 60px;
+}
+
 @media (max-width: 991px) {
   .block {
     margin: 10px auto;
@@ -476,6 +480,7 @@
   text-align: center;
   transition-duration: 300ms !important;
   cursor: pointer;
+  color: #6C7A96;
 }
 @media (max-width: 991px) {
   .card-text {
