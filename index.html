@@ -2,8 +2,6 @@
 <html lang="ru">
 
 <head>
-    <meta name="google-site-verification" content="tj-0hbq7dGLuVodtallVBp2jQ6o-c4WMMgjBOpYjYi8" />
-    <meta name="yandex-verification" content="520e8f8bb5dab3fd" />
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -77,7 +75,7 @@
             <nav class="navigation navbar navbar-default">
                 <div class="container">
                     <div class="navbar-header">
-                        <button type="button" class="open-btn">
+                        <button id="navbar-toggle" type="button" class="open-btn" data-toggle="collapse" data-target=".nav-collapse">
                             <span class="sr-only">Toggle navigation</span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
@@ -86,13 +84,16 @@
                         <a class="navbar-brand" href="index.html"><img src="assets/images/logo.svg" alt></a>
                     </div>
                     <div id="navbar" class="navbar-collapse collapse navbar-right navigation-holder">
-                        <button class="close-navbar"><i class="ti-close"></i></button>
-                        <ul class="nav navbar-nav">
-                            <li><a href="#about">О нас</a></li>
-                            <li><a href="#cases">Кейсы</a></li>
-                            <li><a href="#team">Команда</a></li>
-                            <li><a href="#contacts">Контакты</a></li>
-                            <li><a href="#blog">Блог</a></li>
+                        <button class="close-navbar">
+                            <i class="ti-close"></i>
+                        </button>
+                        <ul id="navbarItems" class="nav navbar-nav">
+                            <li><a class="nav-item" cli href="#about">О нас</a></li>
+                            <li><a class="nav-item" href="#directions">Направления</a></li>
+                            <li><a class="nav-item" href="#steps">4 Шага</a></li>
+                            <li><a class="nav-item" href="#team">Команда</a></li>
+                            <li><a class="nav-item" href="#cases">Кейсы</a></li>
+                            <li><a class="nav-item" href="#contacts">Контакты</a></li>
                         </ul>
                     </div>
                 </div>
@@ -195,7 +196,7 @@
                 </div>
             </div>
 
-            <div class="container section-padding">
+            <div id="directions" class="container section-padding">
                 <div class="row">
                     <div class="col col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
                         <div class="section-title-s3" data-aos="fade-up">
@@ -307,7 +308,7 @@
 
 
         <!-- start  -->
-        <section class=" section-padding">
+        <section id="steps" class=" section-padding">
             <div class="container">
                 <div class="row">
                     <div class="col col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
@@ -336,7 +337,7 @@
                             <div class="flex align-center justify-center ">
                                 <img src="assets/svg/steps/Group-1.svg">
                             </div>
-                            <h3 class="card-title">Мы с вами свяжемся</h3>
+                            <h3 class="card-title">Обратитесь к нам –</br> мы с вами свяжемся</h3>
                             <p class="card-description">Наш специалист сообщит какие документы необходимо предоставить, а также согласует удобную Вам дату и время приёма.</p>
                         </div>
                     </div>
@@ -355,7 +356,7 @@
                                 <img src="assets/svg/steps/Group-3.svg">
                             </div>
                             <h3 class="card-title">Начало сотрудничества</h3>
-                            <p class="card-description">Специалисты юридической консультации оформляют договор, который стороны должны подписать в установленные строки; С этого момента начинается сотрудничество клиента и адвоката.</p>
+                            <p class="card-description">Специалисты юридической консультации оформляют договор, который стороны должны подписать в установленные строки. С этого момента начинается сотрудничество клиента и адвоката.</p>
                         </div>
                     </div>
                 </div>
@@ -487,10 +488,10 @@
                         <div class="contact-form">
                             <form id="contactForm" class="contact-validation-active">
                                 <div>
-                                    <input id="formName" type="text" class="form-control" name="name" placeholder="Name*">
+                                    <input id="formName" type="text" class="form-control" name="name" placeholder="Имя Фамилия">
                                 </div>
                                 <div>
-                                    <input id="formEmail" type="email" name="_replyto" class="form-control" placeholder="Email*">
+                                    <input id="formEmail" type="email" name="_replyto" class="form-control" placeholder="Email">
                                 </div>
                                 <div class="fullwidth">
                                     <textarea id="formText" class="form-control" name="message" placeholder="Что вас беспокоит..."></textarea>
@@ -646,7 +647,7 @@
                                 name: formName.value,
                                 email: formEmail.value,
                                 message: formText.value
-                            }
+                            }  
                         })
                     formName.value = ""
                     formEmail.value = ""
@@ -654,6 +655,18 @@
                     success.style.visibility = 'visible'
                     setTimeout(() => success.style.visibility = 'hidden', 3000)
                 })
+
+                var navbar = $(".navigation-holder");
+                var body = $(".page-wrapper");
+
+                const navbarItems = document.querySelectorAll('.nav-item')
+                navbarItems.forEach(item => item.addEventListener('click', ()=>{
+                    if (navbar.hasClass("slideInn")) {
+                        navbar.removeClass("slideInn");}
+                        
+                    body.removeClass("body-overlay");
+                }))
+            
             })
         </script>
 
