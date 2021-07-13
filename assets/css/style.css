@@ -3953,7 +3953,7 @@ img {
 }
 
 @media (max-width: 768px) {
- .feature-grid {
+    .feature-grid {
         margin-bottom: 15px;
         height: 100%;
         text-align: center;
@@ -3964,7 +3964,7 @@ img {
     }
 }
 
- .feature-grid .fi:before {
+.feature-grid .fi:before {
     font-size: 55px;
     color: #CE6439;
 }
@@ -4590,7 +4590,7 @@ img {
 .contact-section-s3 .contact-info-col {
     width: calc(50% - 85px);
     float: left;
-    padding-top: 200px;
+    padding-top: 100px;
 }
 
 @media (max-width: 991px) {
